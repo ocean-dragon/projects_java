@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx;
+}
+input {
+  width: 400rpx;
+  margin-bottom: 30rpx;
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 8rpx;
+}
+button {
+  width: 200rpx;
+  height: 60rpx;
+  background: #1aad19;
+  color: #fff;
+  border: none;
+  border-radius: 8rpx;
+} 

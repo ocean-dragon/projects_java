@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "学生查询"
+  }
+} 
