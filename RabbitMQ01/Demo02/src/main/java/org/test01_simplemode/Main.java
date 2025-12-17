@@ -1,6 +1,7 @@
-package org.example;
+package org.test01_simplemode;
 
 import com.rabbitmq.client.*;
+import com.rabbitmq.client.MessageProperties;
 
 import java.nio.charset.StandardCharsets;
 
@@ -24,7 +25,7 @@ public class Main {
 
             // 发送消息内容
             String message = "Hello World!";
-            channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
+            channel.basicPublish("", QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
             retMsg = "[" + message + "] sent successfully";
         } catch (Exception e) {
             retMsg = "Exception:" + e.getMessage();
@@ -53,6 +54,7 @@ public class Main {
 //            };
             // 监听队列
 //            channel.basicConsume(QUEUE_NAME, true, consumer);
+
             DeliverCallback deliverCallback = (consumerTag, delivery) -> {
                 String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
                 System.out.println(" [x] Received '" + message + "'");
