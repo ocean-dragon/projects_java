@@ -8,6 +8,6 @@ sky:
     password: root
   alioss:
     endpoint: oss-cn-shenzhen.aliyuncs.com
-    access-key-id: LTAI5tAxu67HA5kReJdh8YVF
-    access-key-secret: 84rsRS6atuldf1TIk2Jh3Hq3xoRyLO
+    accessKeyId: ${ALIBABA_ACCESS_KEY_ID}
+    accessKeySecret: ${ALIBABA_ACCESS_KEY_SECRET}
     bucket-name: ocean-bucket-01
