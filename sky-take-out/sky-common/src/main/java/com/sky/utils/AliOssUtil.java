@@ -7,8 +7,12 @@ import com.aliyun.oss.OSSException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+
 import java.io.ByteArrayInputStream;
 
+/**
+ * 自定义工具类：处理阿里云OSS文件上传
+ */
 @Data
 @AllArgsConstructor
 @Slf4j
