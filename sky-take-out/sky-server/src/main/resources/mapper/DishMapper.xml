@@ -11,6 +11,13 @@
                 #{createUser}, #{updateUser})
     </insert>
 
+    <delete id="deleteBatch">
+        delete from sky_take_out.dish where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
     <select id="queryPage" resultType="com.sky.vo.DishVO">
         SELECT d.*, c.`name` AS categoryName
         FROM dish d LEFT JOIN category c ON d.category_id = c.id
