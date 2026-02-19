@@ -11,3 +11,6 @@ sky:
     accessKeyId: ${ALIBABA_ACCESS_KEY_ID} #防止push是git扫描不通过，改为springboot的environment variables
     accessKeySecret: ${ALIBABA_ACCESS_KEY_SECRET}
     bucket-name: ocean-bucket-01
+  redis:
+    host: localhost
+    port: 6379
