@@ -176,4 +176,16 @@ public class DishServiceImpl implements DishService {
 
         return dishList;
     }
+
+    /**
+     * 菜品启售状态
+     *
+     * @param status
+     * @param id
+     */
+    @Override
+    public void enable(Integer status, Long id) {
+        Dish dish = Dish.builder().status(status).id(id).build();
+        dishMapper.update(dish);
+    }
 }
