@@ -126,7 +126,7 @@ public class DishController {
     @PostMapping("/status/{status}")
     @ApiOperation("菜品启售状态")
     public Result enable(@PathVariable Integer status, Long id) {
-        log.info("<UNK>id<UNK>{}", id);
+        log.info("菜品启售状态：{}", id);
         dishService.enable(status, id);
 
         return Result.success();

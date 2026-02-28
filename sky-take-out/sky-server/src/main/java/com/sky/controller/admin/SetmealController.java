@@ -96,4 +96,20 @@ public class SetmealController {
 
         return Result.success();
     }
+
+    /**
+     * 套餐启售状态
+     *
+     * @param status
+     * @param id
+     * @return
+     */
+    @PostMapping("/status/{status}")
+    @ApiOperation("套餐启售状态")
+    public Result enable(@PathVariable Integer status, Long id) {
+        log.info("套餐启售状态：{}", id);
+        setmealService.enable(status, id);
+
+        return Result.success();
+    }
 }
