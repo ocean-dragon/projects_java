@@ -22,13 +22,13 @@ public interface SetmealMapper {
      * @param id
      * @return
      */
-    @Select("select count(id) from setmeal where category_id = #{categoryId}")
+    @Select("select count(id) from sky_take_out.setmeal where category_id = #{categoryId}")
     Integer countByCategoryId(Long id);
 
     /**
      * 新增套餐
      *
-     * @param Setmeal
+     * @param setmeal
      */
     @AutoFill(OperationType.INSERT)
     void insert(Setmeal setmeal);
@@ -64,4 +64,11 @@ public interface SetmealMapper {
      */
     @Delete("delete from sky_take_out.setmeal where id = #{id}")
     void deleteById(Long setmealId);
+
+    /**
+     * 修改套餐的信息
+     *
+     * @param setmeal
+     */
+    void update(Setmeal setmeal);
 }

@@ -4,6 +4,7 @@ import com.sky.dto.SetmealDTO;
 import com.sky.dto.SetmealPageQueryDTO;
 import com.sky.entity.Setmeal;
 import com.sky.result.PageResult;
+import com.sky.vo.SetmealVO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,4 +33,20 @@ public interface SetmealService {
      * @param ids
      */
     void deleteBatch(List<Long> ids);
+
+    /**
+     * 根据ID查询套餐信息包含套餐的菜品
+     *
+     * @param id
+     * @return
+     */
+    SetmealVO getByIdWithDishes(Long id);
+
+    /**
+     * 修改套餐信息及其套餐中的菜品信息
+     *
+     * @param setmealDTO
+     */
+    void updateWithDishes(SetmealDTO setmealDTO);
+
 }

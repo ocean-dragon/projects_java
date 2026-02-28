@@ -10,7 +10,6 @@
         VALUES (#{categoryId}, #{name}, #{price}, #{description}, #{image}, #{createTime}, #{updateTime}, #{createUser},
                 #{updateUser})
     </insert>
-
     <select id="queryPage" resultType="com.sky.vo.SetmealVO">
         select s.*, c.`name` AS categoryName
         from sky_take_out.setmeal s
@@ -37,4 +36,17 @@
             #{id}
         </foreach>
     </delete>
+
+    <update id="update">
+        update sky_take_out.setmeal
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="price != null">price = #{price},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="image != null">image = #{image}</if>
+        </set>
+        where id = #{id}
+    </update>
+
 </mapper>
