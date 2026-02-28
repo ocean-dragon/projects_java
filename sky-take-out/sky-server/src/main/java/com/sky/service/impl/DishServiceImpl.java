@@ -25,6 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -160,5 +161,19 @@ public class DishServiceImpl implements DishService {
 
             dishFlavorMapper.insertBatch(flavors);
         }
+    }
+
+    /**
+     * 根据分类ID查询菜品
+     *
+     * @param categoryId
+     * @return
+     */
+    @Override
+    public List<Dish> list(Long categoryId) {
+        Dish dish = Dish.builder().categoryId(categoryId).status(StatusConstant.ENABLE).build();
+        List<Dish> dishList = dishMapper.list(dish);
+
+        return dishList;
     }
 }
