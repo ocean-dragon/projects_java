@@ -11,7 +11,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Slf4j
 public class RedisConfiguration {
 
-    @Bean
+    @Bean(name = "redisTemplate")
     public RedisTemplate getRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
         log.info("Creating RedisTemplate...");
         RedisTemplate redisTemplate = new RedisTemplate();
